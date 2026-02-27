@@ -20,4 +20,4 @@ juniper_nr = nr.filter(platform="juniper_junos")
 load_results = juniper_nr.run(task=load_vars)
 config_results = juniper_nr(task=generate_config)
 print_result(load_results)
-print_result(config_results
+print_result(config_results)
