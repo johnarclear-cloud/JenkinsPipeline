@@ -1,0 +1,4 @@
+---
+OSPF:
+  - interface: "ge-0/0/0.0"
+  - area: "0.0.0.0"

@@ -1,6 +1,16 @@
 ---
 R1:
-  hostname: "192.168.68.220"
+  hostname: "192.168.68.200"
+  platform: "juniper_junos"
+  username: "john"
+  password: "Juniper1"
+  groups:
+    - juniper_group
+  data:
+    device_name: "R1"
+
+R2:
+  hostname: "192.168.68.201"
   platform: "juniper_junos"
   username: "john"
   password: "Juniper1"
