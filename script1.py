@@ -1,9 +1,11 @@
+import sys
 from nornir import InitNornir
 from nornir_utils.plugins.tasks.data import load_yaml
 from nornir_jinja2.plugins.tasks import template_file
 from nornir_netmiko.tasks import netmiko_send_config
 from nornir_utils.plugins.functions import print_result
 
+config_file = sys.argv[1]
 nr = InitNornir(config_file=config_file)
 
 def load_vars(task):
