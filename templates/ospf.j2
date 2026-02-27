@@ -1,6 +1,7 @@
 {% if host.vars.OSPF is defined %}
-delete protocols OSPF
-{% for line in host.vars.ospf %}
+delete protocols ospf
+{% for line in host.vars.OSPF %}
 set protocols ospf area {{ line["area"] }} interface {{ line["interface"] }}
-{% end for %}
+{% endfor %}
+{% endif %}
 commit
