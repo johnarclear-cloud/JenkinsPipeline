@@ -409,3 +409,67 @@ Traceback (most recent call last):
 nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
 
 
+2026-02-27 12:48:01,060 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2026-02-27 12:48:01,062 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 2 hosts
+2026-02-27 12:48:01,074 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jcs/automation/.venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jcs/automation/.venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jcs/automation/.venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/jcs/automation/.venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ospf.j2", line 4, in top-level template code
+    set protocols ospf area {{ line["area"] }} interface {{ line["interface"] }}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'area'
+
+2026-02-27 12:48:01,075 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'generate_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jcs/automation/.venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jcs/automation/script1.py", line 16, in generate_config
+    ospf_template = task.run(task=template_file, template="ospf.j2", path="./templates")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jcs/automation/.venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2026-02-27 12:50:21,281 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2026-02-27 12:50:21,284 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 2 hosts
+2026-02-27 12:50:21,294 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jcs/automation/.venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jcs/automation/.venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jcs/automation/.venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/jcs/automation/.venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ospf.j2", line 4, in top-level template code
+    set protocols ospf area {{ line["area"] }} interface {{ line["interface"] }}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'area'
+
+2026-02-27 12:50:21,296 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'generate_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jcs/automation/.venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jcs/automation/script1.py", line 16, in generate_config
+    ospf_template = task.run(task=template_file, template="ospf.j2", path="./templates")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jcs/automation/.venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
